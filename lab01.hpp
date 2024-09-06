@@ -6,4 +6,9 @@ class Board{
 };
 class Player{
     char name[20];
+    bool isX;
+};
+class Position{
+    int x;
+    int y;
 };
