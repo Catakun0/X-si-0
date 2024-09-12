@@ -6,7 +6,7 @@ Jocul se joaca in doua persoane "player1" "player2", acestea plaseaza pe rand X 
 Jocul este finisat in cazul in care exista un castigator sau e remiza.
 1. Jocul poate fi castigat in cazul in care unul dintre jucatori detine 3 siboluri la rand pe orizontala, verticala sau pe deagonala
 2. In cazul in care pe tabla nu mai exista nici un patrat liber si nici un jucator nu are 3 simboluri la rand atunci e remiza
-# Clasele create pentru joc
+# Clasele create pentru joc (hpp)
 * Clasa "Board", 
 1. clasa data detine un char de timp array cu dimensiunea de 9 iandexuri care va reprezenta de la 1-9 fiecare patrat.  
 1 | 2 | 3  
@@ -25,3 +25,5 @@ Jocul este finisat in cazul in care exista un castigator sau e remiza.
 1. Detine un int care reprezinta numarul maxim de jucatori posibili care este egal cu 2
 2. Un char cu dimensiunea de 20 de caractere ce va reprezenta numele jucatorilor
 3. Si un bool ce va determina daca playerul este "X" sau "0"
+* Clasa "RandomPlay"
+1. Detine un int care va determina daca incepe jucatorul "1" sau jucatorul "2"
