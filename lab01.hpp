@@ -1,6 +1,6 @@
 
 class Board{
-    char squere[10] = {'0','1', '2', '3', '4', '5', '6', '7', '8', '9'}; //sizeBoard [3][3]
+    char squere[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'}; //sizeBoard [3][3]
     int setMove(int x, int y, bool Xmove);
     void check_If_is_empty(int x, int y);
     bool checkWin();
