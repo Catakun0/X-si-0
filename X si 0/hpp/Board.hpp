@@ -1,6 +1,6 @@
 #pragma once
 
-class Board{ //program one
+class Board{ 
     char squere[9]; //sizeBoard [3][3]
     public:
     int setMove(int position, bool Xmove); //positioneaza "X" sau "0"
