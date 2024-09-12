@@ -8,4 +8,6 @@ Jocul este finisat in cazul in care exista un castigator sau e remiza.
 2. In cazul in care pe tabla nu mai exista nici un patrat liber si nici un jucator nu are 3 simboluri la rand atunci e remiza
 # Clasele create pentru joc
 * Clasa "Board", clasa data detine un char de timp array cu dimensiunea de 9 iandexuri care va reprezenta de la 1-9 fiecare tratat.
-# Tabel X și 0
+1 | 2 | 3
+4 | 5 | 6
+7 | 8 | 9
