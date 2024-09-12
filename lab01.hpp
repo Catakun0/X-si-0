@@ -1,8 +1,8 @@
 
 class Board{
     char squere[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'}; //sizeBoard [3][3]
-    int setMove(int x, int y, bool Xmove);
-    void check_If_is_empty(int x, int y);
+    int setMove(int position, bool Xmove);
+    void check_If_is_empty(int position);
     bool checkWin();
 };
 class Player{ //Players
@@ -11,8 +11,7 @@ class Player{ //Players
     bool isX;
 };
 class Position{  //
-    int x;
-    int y;
+    int position;
 };
 class Painter{  //Afisarea datelor
     void Draw();
