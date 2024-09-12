@@ -1,6 +1,6 @@
 
-class Board{
-    char squere[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'}; //sizeBoard [3][3]
+class Board{ //program one
+    char squere[9]; //sizeBoard [3][3]
     int setMove(int position, bool Xmove);
     void check_If_is_empty(int position);
     bool checkWin();
@@ -23,4 +23,4 @@ class Engine{  //Functinalitatea jocului
 };
 class RandomPlay{ //RandomPlayerStart
     bool playerStart;
-};
+}; 
