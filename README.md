@@ -3,4 +3,5 @@
 Recrearea jocului clasic tic-tac-toe
 # Logica jocului:
 Jocul se joaca in doua persoane "player1" "player2", acestea plaseaza pe rand X sau 0 pe o tabla de 3/3
-
+Jocul este finisat in cazul in care exista un castigator sau e remiza
+1. 
