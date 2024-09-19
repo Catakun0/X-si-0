@@ -6,3 +6,6 @@ void GameEngine::StartGame() {
 void GameEngine::RestartGame(){
 
 }
+void GameEngine::EndGame() {
+
+}
