@@ -17,5 +17,8 @@ Player.o:
 RandomPlay.o:
    g++ RandomPlay.cpp -o RandomPlay.o -c
 
+main.o:
+   g++ main.cpp -o main.o -c 
+
 clean:
     rm -f *.o *.exe
