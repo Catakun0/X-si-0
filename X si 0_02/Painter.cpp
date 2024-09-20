@@ -1,4 +1,4 @@
-#include "Pinter.hpp"
+#include "Painter.hpp"
 
 void Painter::Draw() {
 
