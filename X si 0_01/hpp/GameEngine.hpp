@@ -1,6 +1,6 @@
 #pragma once
 
-class Engine{
+class GameEngine{
     public:  //Functinalitatea jocului
     void StartGame(); //Porneste jocul
     void RestartGame(); //Reporneste o noua partida
