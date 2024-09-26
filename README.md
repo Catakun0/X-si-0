@@ -12,7 +12,7 @@ Sunt modalitati prin care putem sa usuram modul de compilare a obectelor, mai mu
 la ce se refera aceasta
 * Crearea unui fisier de constructie, spre exemplu un fiser de tip bat sau in fisier "Makefile"   
 Totusi din cauza problemei de compilarea pe dizpozitivul local compilarea o efectuez cu ajutorul executabilului de timp bat   
-* In fisierul respectiv introducem aceleasi linii de comanda:   
+* In fisierul respectiv (bat) introducem aceleasi linii de comanda ca cum am faci-o manual:   
 @echo off   
 g++ Board.cpp -o Board.o -c   
 g++ GameEngine.cpp -o GameEngine.o -c   
