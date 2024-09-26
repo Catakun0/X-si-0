@@ -1,6 +1,6 @@
 # Jocul X si 0
 ## Compilarea obectelor
-* Pentru compilarea manuala a fisierelor cpp e necesar de a merge direct in terminal sau in linia de comanda si de executat ca exemplu acest cod "g++ main.cpp -o apple.o -c"   
+* Pentru compilarea manuala a fisierelor cpp e necesar de a merge direct in terminal sau in linia de comanda si de executat ca exemplu acest cod "g++ main.cpp -o main.o -c"   
 aceasta comanda mai exact ce face
 1. Apeleaza compilatorul g++
 2. "main.cpp" fisierul sursa ce detine codul C++
