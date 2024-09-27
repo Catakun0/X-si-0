@@ -1,5 +1,4 @@
 #include "Board.hpp"
-#include "string"
 #include "iostream"
 
 
@@ -27,10 +26,59 @@ bool Board::check_If_is_empty(int position) {
 int Board::checkWin() {
 
 	std::string selector = "X";
-
-	for (int i = 0; i < 3; i++) 
+	for (int j = 1; j < 3; j++)
 	{
-		if (squere[i * 3] == selector && squere[i * 3 + 1] == selector && squere[i * 3 + 2] == selector) //verificam linele orizontale
+		if (j == 1) 
+		{
+			selector = "X";
+		}
+		else 
+		{
+			selector = "0";
+		}
+
+		for (int i = 0; i < 3; i++)
+		{
+			if (squere[i * 3] == selector && squere[i * 3 + 1] == selector && squere[i * 3 + 2] == selector) //verificam linele orizontale
+			{
+				if (selector == "X")
+				{
+					return 1;
+				}
+				else
+				{
+					return 2;
+				}
+			}
+		}
+
+		for (int i = 0; i < 3; i++)
+		{
+			if (squere[i] == selector && squere[i + 3] == selector && squere[i + 6] == selector)
+			{
+				if (selector == "X")
+				{
+					return 1;
+				}
+				else
+				{
+					return 2;
+				}
+			}
+		}
+
+		if (squere[0] == selector && squere[4] == selector && squere[8] == selector) //verificam linele verticale
+		{
+			if (selector == "X")
+			{
+				return 1;
+			}
+			else
+			{
+				return 2;
+			}
+		}
+		else if (squere[2] == selector && squere[4] == selector && squere[6] == selector)
 		{
 			if (selector == "X")
 			{
@@ -43,42 +91,17 @@ int Board::checkWin() {
 		}
 	}
 
-	for (int i = 0; i < 3; i++) 
+	int j = 0;
+	for (int i = 0; i < 9; i++)
 	{
-		if (squere[i] == selector && squere[i + 3] == selector && squere[i + 6] == selector)
+		if (squere[i] == "0" || squere[i] == "X")
 		{
-			if (selector == "X")
-			{
-				return 1;
-			}
-			else
-			{
-				return 2;
-			}
+			j++;
 		}
 	}
-
-	if (squere[0] == selector && squere[4] == selector && squere[8] == selector) //verificam linele verticale
+	if (j == 9)
 	{
-		if (selector == "X")
-		{
-			return 1;
-		}
-		else
-		{
-			return 2;
-		}
-	}
-	else if (squere[2] == selector && squere[4] == selector && squere[6] == selector)
-	{
-		if (selector == "X")
-		{
-			return 1;
-		}
-		else
-		{
-			return 2;
-		}
+		return 3;
 	}
 	return 0;
 }
