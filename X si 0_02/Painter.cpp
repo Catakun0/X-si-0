@@ -3,10 +3,8 @@
 #include "Board.hpp"
 #include "RandomPlay.hpp"
 #include <iostream> 
-#include <string>
+#include <cstdlib>
 
-std::string Painter::player1Name = "";
-std::string Painter::player2Name = "";
 
 void Painter::Draw(int i) {
 	if (i == 1) {
@@ -15,21 +13,30 @@ void Painter::Draw(int i) {
 		return;
 	}
 	else if (i == 2) {
-		std::cout << "Numele jucătorilor: " << player1Name << " si " << player2Name << std::endl;
+		std::cout << "Numele jucătorilor: " << Player::firstPlayer << " si " << Player::secondPlayer << std::endl;
 
 		return;
 	}
-	else if (5) 
+	else if (i == 3) 
 	{
+		bool enterNow = true;
 		do 
 		{
+			if (enterNow) //afisam tabla de start ca model
+			{
+				std::cout << "[" << Board::squere[0] << "] " << "[" << Board::squere[1] << "] " << "[" << Board::squere[2] << "] \n";
+				std::cout << "[" << Board::squere[3] << "] " << "[" << Board::squere[4] << "] " << "[" << Board::squere[5] << "] \n";
+				std::cout << "[" << Board::squere[6] << "] " << "[" << Board::squere[7] << "] " << "[" << Board::squere[8] << "] \n";
+				enterNow = false;
+			}
+
 			if (RandomPlay::playerStart == 1) // Verificam care jucator incepe
 			{
-				std::cout << "Jucatorul- " << player1Name << " -merge > ";
+				std::cout << "Jucatorul- " << Player::firstPlayer << " -merge > ";
 			}
 			else
 			{
-				std::cout << "Jucatorul- " << player2Name << " -merge > ";
+				std::cout << "Jucatorul- " << Player::secondPlayer << " -merge > ";
 			}
 
 			bool checkSquer = false;
@@ -58,14 +65,17 @@ void Painter::Draw(int i) {
 					std::cout << "Alege o casuta liber \n";
 				}
 			} while (!checkSquer);
-
+			if (!checkWin)
+			{
+				std::system("cls"); // clearScreen;
+			}
 			for (int j = 0; j < 3; j++) {
 				for (int i = 0; i < 3; i++) {
 					int index = j * 3 + i;
 					if (index != select1)
 					{
 						std::cout << "[" << Board::squere[index] << "] "; //afisam casuta din board
-					}
+					} 
 					else
 					{
 						if (RandomPlay::playerStart == 1) //Verificam care jucator merge X sau 0
@@ -86,14 +96,43 @@ void Painter::Draw(int i) {
 				checkWin = Board::checkWin();
 				if (checkWin == 1)
 				{
-					std::cout << "Castigatorul este: " << player1Name << std::endl;
+					std::cout << "Castigatorul este: " << Player::firstPlayer << std::endl;
 					return;
 				}
 				else if (checkWin == 2)
 				{
-					std::cout << "Castigatorul este: " << player2Name << std::endl;
+					std::cout << "Castigatorul este: " << Player::secondPlayer << std::endl;
 					return;
 				}
+				else if (checkWin == 3)
+				{
+					std::cout << "\nRemiza! ";
+					return;
+				}
+			}
+
+		} while (true);
+	}
+	else if (i == 4) // meniul de final
+	{
+		do
+		{
+			int selector = 0;
+			std::cout << "Doriti sa mai jucati sau inchideti jocul: \n 1 - Restart \n 2 - Quit \n";
+			std::cin >> selector;
+
+			if (selector == 1)
+			{
+				std::system("cls");
+				return;
+			}
+			else if (selector == 2)
+			{
+				exit(0);
+			}
+			else
+			{
+				std::cout << "Va rog sa introduceti un numar valid 1-2 \n\n";
 			}
 
 		} while (true);
