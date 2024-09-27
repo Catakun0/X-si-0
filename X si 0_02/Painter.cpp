@@ -27,12 +27,10 @@ void Painter::Draw(int i) {
 		std::cin >> select1;
 		std::cout << "Numărul introdus este: " << select1 << "\n" << std::endl;
 
-		for (int j = 0; i < 9 ;j++) {
-			for (int o = 0; o < 3; o++) {
-				std::cout << "[" << Board::squere[j + o] << "] " << "[" << Board::squere[j + o ] << "] " << "[" << Board::squere[j + o] << "] " << std::endl;
-			}
-			return;
+		for (int o = 0; o < 3; o++) {
+			std::cout << "[" << Board::squere[j + o] << "] " << std::endl;
 		}
+		return;
 	}
 	return;
 }
