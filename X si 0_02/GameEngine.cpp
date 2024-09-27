@@ -1,9 +1,21 @@
 ﻿#include "GameEngine.hpp"
 #include "Painter.hpp"
-
+#include "Board.hpp"
+#include "Player.hpp"
+#include <string>
 
 void GameEngine::StartGame() {
-	painter.Draw(1);
+	Painter painter;
+	Player player;
+
+	painter.Draw(1); //Incepe jocul 
+	player.playerName(); //introducem numele 
+	painter.Draw(2);
+	painter.Draw(10);
+
+	do{
+
+	} while (true);
 }
 void GameEngine::RestartGame(){
 
