@@ -1,5 +1,6 @@
 ﻿#include "GameEngine.hpp"
 #include "Painter.hpp"
+#include "RandomPlay.hpp"
 #include "Board.hpp"
 #include "Player.hpp"
 #include <string>
@@ -7,11 +8,14 @@
 void GameEngine::StartGame() {
 	Painter painter;
 	Player player;
+	RandomPlay randomPlay;
+	Board board;
 
+	board.inserareaSquer();
+	randomPlay.randomGenerate();
+	player.playerName(); //introducem numele 
 	painter.Draw(5);
-	//player.playerName(); //introducem numele 
-	//painter.Draw(2);
-	//painter.Draw(10);
+
 	do {
 
 	} while (true);
