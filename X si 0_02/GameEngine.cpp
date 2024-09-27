@@ -3,7 +3,7 @@
 #include "RandomPlay.hpp"
 #include "Board.hpp"
 #include "Player.hpp"
-#include <string>
+#include <iostream>
 
 void GameEngine::StartGame() {
 	Painter painter;
@@ -11,18 +11,13 @@ void GameEngine::StartGame() {
 	RandomPlay randomPlay;
 	Board board;
 
-	board.inserareaSquer();
-	randomPlay.randomGenerate();
-	player.playerName(); //introducem numele 
-	painter.Draw(5);
-
-	do {
+	do 
+	{
+		board.inserareaSquer(); //inseram tabla de la 1-9
+		randomPlay.randomGenerate(); //incepe la intaplare primul sau al doilea player
+		player.playerName(); //introducem numele 
+		painter.Draw(3); //afiseaza jocul
+		painter.Draw(4);
 
 	} while (true);
-}
-void GameEngine::RestartGame(){
-
-}
-void GameEngine::EndGame() {
-
 }
