@@ -8,12 +8,11 @@ void GameEngine::StartGame() {
 	Painter painter;
 	Player player;
 
-	painter.Draw(1); //Incepe jocul 
-	player.playerName(); //introducem numele 
-	painter.Draw(2);
-	painter.Draw(10);
-
-	do{
+	painter.Draw(5);
+	//player.playerName(); //introducem numele 
+	//painter.Draw(2);
+	//painter.Draw(10);
+	do {
 
 	} while (true);
 }
