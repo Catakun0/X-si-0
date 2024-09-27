@@ -1,6 +1,8 @@
 ﻿#include "Painter.hpp"
 #include "Player.hpp"
+#include "Board.hpp"
 #include <iostream> 
+#include <string>
 
 std::string Painter::player1Name = "";
 std::string Painter::player2Name = "";
@@ -18,7 +20,19 @@ void Painter::Draw(int i) {
 	}
 	else if (i == 10){
 		std::cout << "[1] ""[2] ""[3] \n[4] ""[5] ""[6] \n[7] ""[8] ""[9] \n";
-
 		return;
 	}
+	else if (5) {
+		int select1;
+		std::cin >> select1;
+		std::cout << "Numărul introdus este: " << select1 << "\n" << std::endl;
+
+		for (int j = 0; i < 9 ;j++) {
+			for (int o = 0; o < 3; o++) {
+				std::cout << "[" << Board::squere[j + o] << "] " << "[" << Board::squere[j + o ] << "] " << "[" << Board::squere[j + o] << "] " << std::endl;
+			}
+			return;
+		}
+	}
+	return;
 }
