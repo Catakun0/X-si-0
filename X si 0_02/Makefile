@@ -1,6 +1,7 @@
 all: x_and_0
 
 x_and_0: Board.o GameEngine.o Painter.o Player.o RandomPlay.o main.o
+    g++ Board.o GameEngine.o Painter.o Player.o RandomPlay.o main.o -o x_and_0
 
 Board.o:
     g++ Board.cpp -o Board.o -c
@@ -21,4 +22,4 @@ main.o:
    g++ main.cpp -o main.o -c 
 
 clean:
-    rm -f *.o *.exe
+    rm -f *.o x_and_0
