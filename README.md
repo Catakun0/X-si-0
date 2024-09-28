@@ -30,7 +30,7 @@ Player.o:
   g++ Player.cpp -o Player.o -c   
 Specificam ce obect dorim sa copilam si scriem comanda respectiva   
 Si asa din nou e nevoie pentru fiecare obiect   
-Iar pentru crearea executabilului e nevoie ca toate obectele sa fie contruite intrun singur fisier exe:   
+Iar pentru crearea executabilului e nevoie ca toate obectele sa fie construite intrun singur fisier exe:   
 x_and_0: Board.o GameEngine.o Painter.o Player.o RandomPlay.o main.o   
   g++ Board.o GameEngine.o Painter.o Player.o RandomPlay.o main.o -o x_and_0
 
