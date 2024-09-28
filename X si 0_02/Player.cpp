@@ -11,6 +11,7 @@ bool Player::inseredNames = false;
 void Player::playerName() { // Introducerea numelui
 
     int selector = 0;
+    bool next = false;
     do 
     {
         if (!inseredNames) //introducem numele jucatorilor in cazul in care nu am facuto deja
@@ -19,7 +20,19 @@ void Player::playerName() { // Introducerea numelui
             std::cin >> Player::firstPlayer;
 
             std::cout << "Introduceti numele second_Player: \n";
-            std::cin >> Player::secondPlayer;
+            do 
+            {
+                std::cin >> Player::secondPlayer;
+                if (secondPlayer != firstPlayer) ] //verificam sa nu fie aceliasi nume introduse la fel
+                {
+                    next = true;
+                }
+                else
+                {
+                    std::cout << "Introduceti va rog un nume diferit fata de primul: \n";
+                }
+
+            } while (!next);
 
             std::cout << "Au fost introdusi jucatorii: " << Player::firstPlayer << " - " << Player::secondPlayer << std::endl;
             inseredNames = true; 
