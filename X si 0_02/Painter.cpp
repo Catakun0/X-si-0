@@ -9,12 +9,13 @@
 void Painter::Draw(int i) {
 	if (i == 1) 
 	{
-		bool enterNow = true;
+		bool enterNow = true; //bool pentru a afisa doar o data modelul
 		do 
 		{
 			if (enterNow) //afisam tabla de start ca model
 			{
-				std::cout << "\n Sa inceapa jocul \n";
+				std::system("cls"); // curatam ecranul
+				std::cout << "\n Sa inceapa jocul \n\n";
 				std::cout << "[" << Board::squere[0] << "] " << "[" << Board::squere[1] << "] " << "[" << Board::squere[2] << "] \n";
 				std::cout << "[" << Board::squere[3] << "] " << "[" << Board::squere[4] << "] " << "[" << Board::squere[5] << "] \n";
 				std::cout << "[" << Board::squere[6] << "] " << "[" << Board::squere[7] << "] " << "[" << Board::squere[8] << "] \n";
@@ -35,7 +36,7 @@ void Painter::Draw(int i) {
 			int select1 = 0;
 			bool next = false;
 			int checkWin = 0;
-			do // verificam daca este loc liber
+			do //verificam daca casuta selectata este libera
 			{
 				do 
 				{
@@ -46,7 +47,7 @@ void Painter::Draw(int i) {
 					}
 					else 
 					{
-						std::cout << "Va rog sa introduceti o caseta de la [1 & 9] \n";
+						std::cout << "Va rog sa introduceti o caseta de la [1 & 9] \n"; 
 						next = false;
 					}
 				} while (!next);
@@ -59,9 +60,9 @@ void Painter::Draw(int i) {
 			} while (!checkSquer);
 			if (!checkWin)
 			{
-				std::system("cls"); // clearScreen;
+				std::system("cls");
 			}
-			for (int j = 0; j < 3; j++) {
+			for (int j = 0; j < 3; j++) { //verificam fiecare iandex/ casuta din board
 				for (int i = 0; i < 3; i++) {
 					int index = j * 3 + i;
 					if (index != select1)
@@ -74,18 +75,18 @@ void Painter::Draw(int i) {
 						{
 							Board::squere[index] = "X";
 							std::cout << "[" << Board::squere[index] << "] ";
-							RandomPlay::playerStart = 2;
+							RandomPlay::playerStart = 2; //schimbam sa mearga urmatorul jucator
 						}
 						else
 						{
 							Board::squere[index] = "0";
 							std::cout << "[" << Board::squere[index] << "] ";
-							RandomPlay::playerStart = 1;
+							RandomPlay::playerStart = 1; //schimbam sa mearga urmatorul jucator
 						}
 					}
 				}
-				std::cout << std::endl;
-				checkWin = Board::checkWin();
+				std::cout << std::endl; 
+				checkWin = Board::checkWin(); //verificam daca exista un castigator 
 				if (checkWin == 1)
 				{
 					std::cout << "Castigatorul este: " << Player::firstPlayer << std::endl;
