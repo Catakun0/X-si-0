@@ -23,7 +23,7 @@ void Player::playerName() { // Introducerea numelui
             do 
             {
                 std::cin >> Player::secondPlayer;
-                if (secondPlayer != firstPlayer) ] //verificam sa nu fie aceliasi nume introduse la fel
+                if (secondPlayer != firstPlayer) //verificam sa nu fie aceliasi nume introduse la fel
                 {
                     next = true;
                 }
