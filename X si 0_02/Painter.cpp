@@ -7,26 +7,18 @@
 
 
 void Painter::Draw(int i) {
-	if (i == 1) {
-		std::cout << "Sa inceapa jocul \n";
-
-		return;
-	}
-	else if (i == 2) {
-		std::cout << "Numele jucătorilor: " << Player::firstPlayer << " si " << Player::secondPlayer << std::endl;
-
-		return;
-	}
-	else if (i == 3) 
+	if (i == 1) 
 	{
 		bool enterNow = true;
 		do 
 		{
 			if (enterNow) //afisam tabla de start ca model
 			{
+				std::cout << "\n Sa inceapa jocul \n";
 				std::cout << "[" << Board::squere[0] << "] " << "[" << Board::squere[1] << "] " << "[" << Board::squere[2] << "] \n";
 				std::cout << "[" << Board::squere[3] << "] " << "[" << Board::squere[4] << "] " << "[" << Board::squere[5] << "] \n";
 				std::cout << "[" << Board::squere[6] << "] " << "[" << Board::squere[7] << "] " << "[" << Board::squere[8] << "] \n";
+				std::cout << "\n Numele jucătorilor: " << Player::firstPlayer << " si " << Player::secondPlayer << "\n" << std::endl;
 				enterNow = false;
 			}
 
@@ -113,7 +105,7 @@ void Painter::Draw(int i) {
 
 		} while (true);
 	}
-	else if (i == 4) // meniul de final
+	else if (i == 2) // meniul de final
 	{
 		do
 		{
