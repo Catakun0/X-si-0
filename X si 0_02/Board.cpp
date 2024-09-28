@@ -4,7 +4,7 @@
 
 std::string Board::squere[8];
 
-void Board::inserareaSquer() {
+void Board::inserareaSquer() { //inseram tabla de la 1-9 astfel o putem reseta de fiecare data cand alegem sa mai jucam o partida
 	for (int i = 0; i < 9; i++) 
 	{
 		squere[i] = std::to_string(i + 1);
@@ -12,7 +12,7 @@ void Board::inserareaSquer() {
 	return;
 }
 
-bool Board::check_If_is_empty(int position) {
+bool Board::check_If_is_empty(int position) { //verificam daca positioa data este goala, deci nu trb sa se afle acolo "X" SAU "0"
 
 	if (squere[position] != "0" && squere[position] != "X")
 	{
@@ -23,10 +23,10 @@ bool Board::check_If_is_empty(int position) {
 		return false;
 	}
 }
-int Board::checkWin() {
+int Board::checkWin() { //verificam daca este un castigator sau daca e remiza
 
 	std::string selector = "X";
-	for (int j = 1; j < 3; j++)
+	for (int j = 1; j < 3; j++) // facem 2 verificari la rand pentru X si pentru 0
 	{
 		if (j == 1) 
 		{
@@ -37,9 +37,9 @@ int Board::checkWin() {
 			selector = "0";
 		}
 
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < 3; i++) //verificam orizontal
 		{
-			if (squere[i * 3] == selector && squere[i * 3 + 1] == selector && squere[i * 3 + 2] == selector) //verificam linele orizontale
+			if (squere[i * 3] == selector && squere[i * 3 + 1] == selector && squere[i * 3 + 2] == selector) 
 			{
 				if (selector == "X")
 				{
@@ -52,7 +52,7 @@ int Board::checkWin() {
 			}
 		}
 
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < 3; i++) //verificam vertical
 		{
 			if (squere[i] == selector && squere[i + 3] == selector && squere[i + 6] == selector)
 			{
@@ -67,7 +67,7 @@ int Board::checkWin() {
 			}
 		}
 
-		if (squere[0] == selector && squere[4] == selector && squere[8] == selector) //verificam linele verticale
+		if (squere[0] == selector && squere[4] == selector && squere[8] == selector) //verificam pe diagonala
 		{
 			if (selector == "X")
 			{
@@ -78,7 +78,7 @@ int Board::checkWin() {
 				return 2;
 			}
 		}
-		else if (squere[2] == selector && squere[4] == selector && squere[6] == selector)
+		else if (squere[2] == selector && squere[4] == selector && squere[6] == selector) //verificam pe diagonala
 		{
 			if (selector == "X")
 			{
@@ -92,7 +92,7 @@ int Board::checkWin() {
 	}
 
 	int j = 0;
-	for (int i = 0; i < 9; i++)
+	for (int i = 0; i < 9; i++) //verificam in cazul in care nu exista nici un castigator, daca toate casutele sunt ocupate, in cazul in care sunt toate ocupate si nu exista castigator rezulta ca e remiza
 	{
 		if (squere[i] == "0" || squere[i] == "X")
 		{
