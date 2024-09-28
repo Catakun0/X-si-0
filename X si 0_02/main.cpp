@@ -2,6 +2,6 @@
 
 
 int main() {
-	GameEngine engine;
-	engine.StartGame();
+	GameEngine engine; //instanta
+	engine.StartGame(); //apelam functia
 }
