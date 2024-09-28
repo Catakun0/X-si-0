@@ -23,4 +23,14 @@ g++ main.cpp -o main.o -c
 g++ Board.o GameEngine.o Painter.o Player.o RandomPlay.o main.o -o tic_tac_toe.exe   
 * Astfel prin rularea acestui fisier prin terminal folosind comanda "make" va creea obecte pentru fiecare fisier in parte care a fost introduse in acesta
 * Iar "g++ Board.o GameEngine.o Painter.o Player.o RandomPlay.o main.o -o tic_tac_toe.exe" linia aceasta de comanda va crea un executabil pentru jocul nostru pe care il putem rula si juca
+# Makefile
+* in cazul in care folosim compilarea cu ajutorul unui fisier Makefile e doar un pic mai diferit 
+nu inseram direct comanda g++ Player.cpp -o Player.o -c Dar:   
+Player.o:   
+  g++ Player.cpp -o Player.o -c   
+Specificam ce obect dorim sa copilam si scriem comanda respectiva   
+Si asa din nou e nevoie pentru fiecare obiect   
+Iar pentru crearea executabilului e nevoie ca toate obectele sa fie contruite intrun singur fisier exe:   
+x_and_0: Board.o GameEngine.o Painter.o Player.o RandomPlay.o main.o   
+  g++ Board.o GameEngine.o Painter.o Player.o RandomPlay.o main.o -o x_and_0
 
