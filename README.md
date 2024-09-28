@@ -8,7 +8,7 @@ aceasta comanda mai exact ce face
 4. Si -c indica faptul ca trebuie doar sa compileze fisier de tip obect ci nu un executabil   
 Astfel reusim sa compilam manual fisierele dorite in cazul in care nu persista nici o eruare in fisierile hpp si cpp
 ## Fisierele de constructie
-# bat
+# Bat
 Sunt modalitati prin care putem sa usuram modul de compilare a obectelor, mai mult ca printr-o metoda semi-automatizata
 la ce se refera aceasta
 * Crearea unui fisier de constructie, spre exemplu un fiser de tip bat sau un fisier "Makefile"   
