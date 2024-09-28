@@ -6,7 +6,7 @@
 #include <iostream>
 
 void GameEngine::StartGame() {
-	Painter painter;
+	Painter painter; //instantele
 	Player player;
 	RandomPlay randomPlay;
 	Board board;
@@ -16,8 +16,8 @@ void GameEngine::StartGame() {
 		board.inserareaSquer(); //inseram tabla de la 1-9
 		randomPlay.randomGenerate(); //incepe la intaplare primul sau al doilea player
 		player.playerName(); //introducem numele 
-		painter.Draw(3); //afiseaza jocul
-		painter.Draw(4);
+		painter.Draw(1); //afiseaza jocul
+		painter.Draw(2); //meniul de final
 
 	} while (true);
 }
