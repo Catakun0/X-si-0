@@ -13,7 +13,7 @@ void Player::playerName() { // Introducerea numelui
     int selector = 0;
     do 
     {
-        if (!inseredNames)
+        if (!inseredNames) //introducem numele jucatorilor in cazul in care nu am facuto deja
         {
             std::cout << "Introduceti numele first_Player: \n";
             std::cin >> Player::firstPlayer;
@@ -22,11 +22,11 @@ void Player::playerName() { // Introducerea numelui
             std::cin >> Player::secondPlayer;
 
             std::cout << "Au fost introdusi jucatorii: " << Player::firstPlayer << " - " << Player::secondPlayer << std::endl;
-            inseredNames = true;
+            inseredNames = true; 
             return;
         }
-        else
-        {
+        else //in cazul in care dorim dupa finisarea unuei partide alegem sa jucam din nou, putem sa jucam cu numele care au fost deja introdus sau sa introducem unele noi
+        { 
             std::cout << "Numele introduse au fost " << firstPlayer << " Si " << secondPlayer << "\nDoriti sa schimbati numele jucatorilor? \n 1 - Yes \n 2 - NO" << std::endl;
 
             std::cin >> selector;
