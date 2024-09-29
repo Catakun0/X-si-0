@@ -3,7 +3,7 @@
 #include "createUnity.hpp"
 #include <iostream>
 
-void GameEngine::startGame() {
+void GameEngine::startRound() {
 	createEnemy createEnemy_now;
 	createUnity createUnity_now;
 	createEnemy_now.generareEnemy(2);
