@@ -6,6 +6,6 @@
 
 class listele{
     public:
-    std::vector<Enemy> enemyList;
-    std::vector<Unitati> unityList;
+    static std::vector<Enemy> enemyList;
+    static std::vector<Unitati> unityList;
 };
