@@ -2,5 +2,5 @@
 
 class GameEngine{
     public:
-    void startGame();
+    void startRound();
 };
