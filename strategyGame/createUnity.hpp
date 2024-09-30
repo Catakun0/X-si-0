@@ -2,5 +2,5 @@
 
 class createUnity{
     public:
-    void generareUnity(int count);
+    void generareUnity();
 };
