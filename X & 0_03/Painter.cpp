@@ -6,6 +6,36 @@
 #include <cstdlib>
 
 
+//operatorul de citire
+std::istream& operator>>(std::istream& in, Painter& painter) {
+	int temp;
+	bool next = false;
+	do 
+	{
+		in >> isdigit (temp);
+		if (temp > 0 && temp < 10)
+		{
+			next = true;
+		}
+		else 
+		{
+			std::cout << "Va rog sa introduceti o caseta de la 1 - 9";
+			next = false;
+		}
+	} while (!next);
+
+	painter.select1 = temp - 1;
+	return in;
+}
+
+//operator de afisare
+std::ostream& operator<<(std::ostream& out, const Painter& painter) {
+	out << "[" << Board::squere[0] << "] " << "[" << Board::squere[1] << "] " << "[" << Board::squere[2] << "] \n";
+	out << "[" << Board::squere[3] << "] " << "[" << Board::squere[4] << "] " << "[" << Board::squere[5] << "] \n";
+	out << "[" << Board::squere[6] << "] " << "[" << Board::squere[7] << "] " << "[" << Board::squere[8] << "] \n";
+	return out;
+}
+
 void Painter::Draw(int i) {
 	if (i == 1) 
 	{
@@ -16,9 +46,7 @@ void Painter::Draw(int i) {
 			{
 				std::system("cls"); // curatam ecranul
 				std::cout << "\n Sa inceapa jocul \n\n";
-				std::cout << "[" << Board::squere[0] << "] " << "[" << Board::squere[1] << "] " << "[" << Board::squere[2] << "] \n";
-				std::cout << "[" << Board::squere[3] << "] " << "[" << Board::squere[4] << "] " << "[" << Board::squere[5] << "] \n";
-				std::cout << "[" << Board::squere[6] << "] " << "[" << Board::squere[7] << "] " << "[" << Board::squere[8] << "] \n";
+				std::cout << *this; //operatorul de afisare
 				std::cout << "\n Numele jucătorilor: " << Player::firstPlayer << " si " << Player::secondPlayer << "\n" << std::endl;
 				enterNow = false;
 			}
@@ -33,26 +61,13 @@ void Painter::Draw(int i) {
 			}
 
 			bool checkSquer = false;
-			int select1 = 0;
-			bool next = false;
 			int checkWin = 0;
+
 			do //verificam daca casuta selectata este libera
 			{
-				do 
-				{
-					std::cin >> select1;
-					if (select1 > 0 && select1 < 10) 
-					{
-						next = true;
-					}
-					else 
-					{
-						std::cout << "Va rog sa introduceti o caseta de la [1 & 9] \n"; 
-						next = false;
-					}
-				} while (!next);
-				select1--;
-				checkSquer = Board::check_If_is_empty(select1);
+				std::cin >> *this; // operatorul de citire
+
+				checkSquer = Board::check_If_is_empty(this->select1);
 				if (!checkSquer) 
 				{
 					std::cout << "Alege o casuta liber \n";
