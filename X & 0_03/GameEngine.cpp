@@ -9,13 +9,12 @@ void GameEngine::StartGame() {
 	//instantele
 	Player player;
 	RandomPlay randomPlay;
-	Board board1;
-	Board board2;
-	Painter painter(&board2);
+	Board boardCopy(boardOriginal);
+	Painter painter(&boardCopy);
 
 	do 
 	{
-		board2 = board1;
+		boardCopy = boardOriginal;
 		randomPlay.randomGenerate(); //incepe la intaplare primul sau al doilea player
 		player.playerName(); //introducem numele 
 		painter.Draw(1); //afiseaza jocul
