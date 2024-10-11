@@ -10,12 +10,12 @@ void GameEngine::StartGame() {
 	Player player;
 	RandomPlay randomPlay;
 	Board boardOriginal; //creem un obect origianl
-	Board boardCopy(boardOriginal); //si aici fiind in "start" obectul, boardCopy va fi egal cu boardOriginal, apeland constructorul
+	Board boardCopy(boardOriginal); //si aici fiind in "start" obectul, boardCopy va fi egal cu boardOriginal, apeland constructorul de copiere
 	Painter painter(&boardCopy);
 
 	do 
 	{
-		boardCopy = boardOriginal;
+		boardCopy = boardOriginal; //aici deja facem o copiere superficiala
 		randomPlay.randomGenerate(); //incepe la intaplare primul sau al doilea player
 		player.playerName(); //introducem numele 
 		painter.Draw(1); //afiseaza jocul
