@@ -2,14 +2,22 @@
 #include "iostream"
 
 
-std::string Board::squere[8];
+//std::string Board::squere[8];
 
-void Board::inserareaSquer() { //inseram tabla de la 1-9 astfel o putem reseta de fiecare data cand alegem sa mai jucam o partida
+Board::Board() 
+{
 	for (int i = 0; i < 9; i++) 
 	{
 		squere[i] = std::to_string(i + 1);
 	}
-	return;
+}
+
+Board::Board(const Board& other) 
+{
+	for (int i = 0; i < 9; i++) 
+	{
+		squere[i] = other.squere[i];
+	}
 }
 
 bool Board::check_If_is_empty(int position) { //verificam daca positioa data este goala, deci nu trb sa se afle acolo "X" SAU "0"
