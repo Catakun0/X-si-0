@@ -9,7 +9,8 @@ void GameEngine::StartGame() {
 	//instantele
 	Player player;
 	RandomPlay randomPlay;
-	Board boardCopy(boardOriginal);
+	Board boardOriginal; //creem un obect origianl
+	Board boardCopy(boardOriginal); //si aici fiind in "start" obectul, boardCopy va fi egal cu boardOriginal, apeland constructorul
 	Painter painter(&boardCopy);
 
 	do 
