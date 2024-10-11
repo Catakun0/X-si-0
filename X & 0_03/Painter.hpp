@@ -8,7 +8,7 @@ class Painter{
     int select1;
     Board* board;
 
-    Painter(Board* b) : board(b) {}
+    Painter(Board* b) : board(b) {} //primeste ca parametru un board cu care se va juca
 
     void Draw(int i); //Afisarea datelor necesare inclusiv a tablei
 
