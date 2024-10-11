@@ -2,8 +2,6 @@
 #include "iostream"
 
 
-//std::string Board::squere[8];
-
 Board::Board() 
 {
 	for (int i = 0; i < 9; i++) 
