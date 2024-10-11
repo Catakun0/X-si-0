@@ -4,17 +4,17 @@
 
 Board::Board() 
 {
-	for (int i = 0; i < 9; i++) 
+	for (int i = 0; i < 9; i++) //constructor implicit folosit pentru initializarea patratului
 	{
 		squere[i] = std::to_string(i + 1);
 	}
 }
 
-Board::Board(const Board& other) 
+Board::Board(const Board& other) //construcotr de copiere ce primeste un parametru de tip Board
 {
 	for (int i = 0; i < 9; i++) 
 	{
-		squere[i] = other.squere[i];
+		squere[i] = other.squere[i]; //si aici obectul nostru va fi egal cu cel "original"
 	}
 }
 
