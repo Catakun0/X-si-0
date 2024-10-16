@@ -8,6 +8,17 @@ std::string Player::firstPlayer = "";
 std::string Player::secondPlayer = "";
 bool Player::inseredNames = false;
 
+Player::Player() { //con implicit
+
+}
+
+Player::Player(const Player& other) { //operator cu parametri
+
+}
+bool Player::operator==(const Player& other) const { //operator de comparatie
+
+}
+
 void Player::playerName() { // Introducerea numelui
 
     int selector = 0;
