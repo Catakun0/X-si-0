@@ -7,4 +7,8 @@ public:
     void playerName(); //introducere numelor 
     static std::string firstPlayer, secondPlayer; //variabelele pentru numele jucatorilor
     static bool inseredNames; //un bool care va fi true in cazul in care am introdus o data numele jucatorilor
+
+    Player(); //constructor implicit
+    Player(const Player& other); //operatorii de copiere
+    bool operator==(const Player& other) const; // de comparatie
 };
