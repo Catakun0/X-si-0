@@ -11,7 +11,7 @@ class Board{
     Board(const int initialHightBoard); // construcotr cu parametru
 
     Board& operator = (const Board& other);//operator de copiere
-    bool operator == (const Board& other) const; // operator de comparatie
+    bool operator == (int position) const; // operator de comparatie
     friend std::ostream& operator << (std::ostream& os, const Board& Board); // operator de afisare
     friend std::istream& operator >> (std::istream& is, Board& Board); // operator de citire
 
