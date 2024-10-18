@@ -4,18 +4,36 @@
 
 Board::Board() 
 {
-	for (int i = 0; i < 9; i++) //constructor implicit folosit pentru initializarea patratului
+	
+}
+
+Board::Board(const Board& other) 
+{
+
+}
+Board::Board(const int initialHightBoard) {
+
+}
+Board& Board::operator = (const Board& other) {
+	
+}
+bool Board::operator == (const Board& other) const {
+
+}
+std::ostream& operator << (std::ostream os, const Board& board) {
+
+}
+std::istream& operator >> (std::istream is, Board& board) {
+
+}
+
+void Board::initializareaTablei() 
+{
+	for (int i = 0; i < 9; i++)
 	{
 		squere[i] = std::to_string(i + 1);
 	}
-}
-
-Board::Board(const Board& other) //construcotr de copiere ce primeste un parametru de tip Board
-{
-	for (int i = 0; i < 9; i++) 
-	{
-		squere[i] = other.squere[i]; //si aici obectul nostru va fi egal cu cel "original"
-	}
+	return;
 }
 
 bool Board::check_If_is_empty(int position) { //verificam daca positioa data este goala, deci nu trb sa se afle acolo "X" SAU "0"
