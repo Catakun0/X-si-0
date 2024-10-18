@@ -61,15 +61,15 @@ std::ostream& operator<<(std::ostream& os, const Player& player)
 // Operator de citire
 std::istream& operator>>(std::istream& is, Player& player)
 {
-    std::clog << "Inserati primul nume: ";
+    std::clog << "Introduceti primul Jucator: ";
     is >> player.firstPlayer;
 
     do {
-        std::clog << "Inserati al doilea nume: ";
+        std::clog << "Introduceti al doilea Jucator: ";
         is >> player.secondPlayer;
         if (player.secondPlayer == player.firstPlayer)
         {
-            std::cerr << "Introduceti un nume diferit fata de primul \n";
+            std::cerr << "Introduceti un nume diferit fata de primul! \n";
         }
     } while (player.secondPlayer == player.firstPlayer);
 
