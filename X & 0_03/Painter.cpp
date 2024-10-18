@@ -5,20 +5,25 @@
 #include <iostream> 
 #include <cstdlib>
 
-Painter::Painter()
-{
+Painter::Painter() : color(0) {
 
 }
-Painter::Painter(const Painter& other)
-{
+
+Painter::Painter(const Painter& other) {
+	this->color = other.color; 
 
 }
-Painter& Painter::operator = (const Painter& other)
-{
 
+Painter& Painter::operator=(const Painter& other) {
+	if (this != &other) {
+		this->color = other.color; 
+
+	}
+	return *this; 
 }
-bool Painter::operator == (const Painter& other) const 
-{
+
+bool Painter::operator==(const Painter& other) const {
+	return this->color == other.color; 
 
 }
 
