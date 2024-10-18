@@ -4,15 +4,19 @@
 
 class Painter{ 
     public: 
-
     int select1;
-    Board* board;
 
+    Painter(); //constructor implicit
+    Painter(const Painter& other); //consttructor de copiere
     Painter(Board* b) : board(b) {} //primeste ca parametru un board cu care se va juca
+
+    Painter& operator = (const Painter& other);//operator de copiere
+    bool operator == (const Painter& other) const;
 
     void Draw(int i); //Afisarea datelor necesare inclusiv a tablei
 
-    friend std::istream& operator>>(std::istream& in, Painter& painter);
-    friend std::ostream& operator<<(std::ostream& out, const Painter& painter);
-
+    friend std::istream& operator>>(std::istream& in, Painter& painter); //operator de citire
+    friend std::ostream& operator<<(std::ostream& out, const Painter& painter); //operator de afisare
+    private:
+    Board* board;
 }; 
