@@ -49,7 +49,8 @@ bool Player::operator==(const Player& other) const
 }
 
 // Operator de afisare
-std::ostream& operator<<(std::ostream& os, const Player& player) {
+std::ostream& operator<<(std::ostream& os, const Player& player) 
+{
     os << "First Player: " << player.firstPlayer << ", "
         << "Second Player: " << player.secondPlayer << ", "
         << "Max Players: " << player.maxPlayers << ", "
@@ -58,14 +59,16 @@ std::ostream& operator<<(std::ostream& os, const Player& player) {
 }
 
 // Operator de citire
-std::istream& operator>>(std::istream& is, Player& player) {
+std::istream& operator>>(std::istream& is, Player& player)
+{
     std::clog << "Inserati primul nume: ";
     is >> player.firstPlayer;
 
     do {
         std::clog << "Inserati al doilea nume: ";
         is >> player.secondPlayer;
-        if (player.secondPlayer == player.firstPlayer) {
+        if (player.secondPlayer == player.firstPlayer)
+        {
             std::cerr << "Introduceti un nume diferit fata de primul \n";
         }
     } while (player.secondPlayer == player.firstPlayer);
