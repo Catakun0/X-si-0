@@ -5,6 +5,20 @@
 #include <iostream> 
 #include <cstdlib>
 
+Painter::Painter()
+{
+
+}
+Painter::Painter(const Painter& other)
+{
+
+}
+Painter& Painter::operator = (const Painter& other) {
+
+}
+bool Painter::operator == (const Painter& other) const {
+
+}
 
 //operatorul de citire
 std::istream& operator>>(std::istream& in, Painter& painter) {
