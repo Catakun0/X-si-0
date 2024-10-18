@@ -8,14 +8,28 @@ std::string Player::firstPlayer = "";
 std::string Player::secondPlayer = "";
 bool Player::inseredNames = false;
 
-Player::Player() { //con implicit
+Player::Player()
+{
 
 }
 
-Player::Player(const Player& other) { //operator cu parametri
+Player::Player(const Player& other)
+{
 
 }
-bool Player::operator==(const Player& other) const { //operator de comparatie
+Player::Player(const int initialMaxPlayers) {
+
+}
+Player& Player::operator = (const Player& other) {
+
+}
+bool Player::operator == (const Player& other) const {
+
+}
+std::ostream& operator << (std::ostream os, const Player& player) {
+
+}
+std::istream& operator >> (std::istream is, Player& player) {
 
 }
 
