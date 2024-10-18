@@ -5,26 +5,31 @@
 #include <iostream> 
 #include <cstdlib>
 
-Painter::Painter() : color(0) {
+Painter::Painter()
+{
 
 }
 
-Painter::Painter(const Painter& other) {
-	this->color = other.color; 
+// Constructor de copiere
+Painter::Painter(const Painter& other)
+{
 
 }
 
-Painter& Painter::operator=(const Painter& other) {
+// Operator de copiere
+Painter& Painter::operator=(const Painter& other) 
+{
 	if (this != &other) {
-		this->color = other.color; 
-
+		board = other.board;
+		select1 = other.select1;
 	}
-	return *this; 
+	return *this;
 }
 
-bool Painter::operator==(const Painter& other) const {
-	return this->color == other.color; 
-
+// Operator de comparare
+bool Painter::operator==(const Painter& other) const 
+{
+	return (board == other.board);
 }
 
 //operatorul de citire
@@ -41,7 +46,7 @@ std::istream& operator>>(std::istream& in, Painter& painter)
 		}
 		else 
 		{
-			std::cout << "Va rog sa introduceti o caseta de la 1 - 9";
+			std::cerr << "Va rog sa introduceti o caseta de la 1 - 9";
 			next = false;
 		}
 	} while (!next);
