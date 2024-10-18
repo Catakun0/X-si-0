@@ -13,15 +13,18 @@ Painter::Painter(const Painter& other)
 {
 
 }
-Painter& Painter::operator = (const Painter& other) {
+Painter& Painter::operator = (const Painter& other)
+{
 
 }
-bool Painter::operator == (const Painter& other) const {
+bool Painter::operator == (const Painter& other) const 
+{
 
 }
 
 //operatorul de citire
-std::istream& operator>>(std::istream& in, Painter& painter) {
+std::istream& operator>>(std::istream& in, Painter& painter)
+{
 	int temp;
 	bool next = false;
 	do 
