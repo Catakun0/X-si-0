@@ -41,7 +41,7 @@ bool RandomPlay::operator == (const RandomPlay& other) const
 //Operator de afisare
 std::ostream& operator<<(std::ostream& os, const RandomPlay& randomPlay)
 {
-    os << "Player -> " << randomPlay.playerStart << " Incepe" << std::endl;
+    os << "Player -> " << randomPlay.playerStart << " Va incepe" << std::endl;
     return os;
 }
 
