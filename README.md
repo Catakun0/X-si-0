@@ -1,7 +1,7 @@
 # Jocul X si 0   
 
 ## Constructori si Operatorii
-# Construcotrii 
+# Constructorii 
 Aveam mai multe tipuri de constructoria acestea fiind   
 1. Constructorul implicit
 2. Constructorul de copiere
