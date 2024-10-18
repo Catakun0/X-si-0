@@ -1,6 +1,7 @@
 ﻿#include "RandomPlay.hpp"
 #include <iostream>
 #include <ctime>
+#include <windows.h>  //pentru a pune putin in pauza programul
 
 int RandomPlay::playerStart = 0;
 
@@ -55,5 +56,6 @@ void RandomPlay::randomGenerate() { //o randomizare bazata pe timp (nu-mi lucra 
     srand(time(0));
     playerStart = rand() % 2 + 1;
     std::cout << *this;
+    Sleep(2000);
     return;
 }
