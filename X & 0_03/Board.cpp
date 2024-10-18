@@ -6,7 +6,6 @@ Board::Board()
 {
 	
 }
-
 Board::Board(const Board& other) 
 {
 
