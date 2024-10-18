@@ -2,29 +2,42 @@
 #include <iostream>
 #include <ctime>
 
+// Constructor implicit
 RandomPlay::RandomPlay()
 {
 
 }
 
+//Constructor de copiere
 RandomPlay::RandomPlay(const RandomPlay& other)
 {
 
 }
-RandomPlay::RandomPlay(const int initialWhoStart) {
+//Constructor cu parametru
+RandomPlay::RandomPlay(const int initialWhoStart) 
+{
 
 }
-RandomPlay& RandomPlay::operator = (const RandomPlay& other) {
 
+//Operator de copiere
+RandomPlay& RandomPlay::operator=(const RandomPlay& other)
+{
+    
 }
-bool RandomPlay::operator == (const RandomPlay& other) const {
 
+//Operator de comparatie
+bool RandomPlay::operator==(const RandomPlay& other) const {
+    
 }
-std::ostream& operator << (std::ostream os, const RandomPlay& randomPlay) {
 
+// Operator de afisare
+std::ostream& operator<<(std::ostream& os, const RandomPlay& randomPlay) {
+    
 }
-std::istream& operator >> (std::istream is, RandomPlay& brandomPlay) {
 
+// Operator de citire
+std::istream& operator>>(std::istream& is, RandomPlay& randomPlay) {
+    
 }
 
 int RandomPlay::playerStart = 0;
@@ -33,5 +46,4 @@ void RandomPlay::randomGenerate() { //o randomizare bazata pe timp (nu-mi lucra 
 
     srand(time(0));
     playerStart = rand() % 2 + 1;
-
 }
