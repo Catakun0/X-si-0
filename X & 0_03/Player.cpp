@@ -8,75 +8,73 @@ std::string Player::firstPlayer = "";
 std::string Player::secondPlayer = "";
 bool Player::inseredNames = false;
 
-Player::Player()
+// Constructor implicit
+Player::Player() 
 {
 
 }
 
-Player::Player(const Player& other)
+// Constructor de copiere
+Player::Player(const Player& other) 
 {
-
+    maxPlayers = other.maxPlayers;
+    firstPlayer = other.firstPlayer;
+    secondPlayer = other.secondPlayer;
+    inseredNames = other.inseredNames;
 }
-Player::Player(const int initialMaxPlayers) {
 
+// Constructor cu parametru
+Player::Player(const int initialMaxPlayers)
+{
+    maxPlayers = initialMaxPlayers;
 }
-Player& Player::operator = (const Player& other) {
 
+// Operator de copiere
+Player& Player::operator=(const Player& other) 
+{
+    if (this != &other) {
+        maxPlayers = other.maxPlayers;
+        firstPlayer = other.firstPlayer;
+        secondPlayer = other.secondPlayer;
+        inseredNames = other.inseredNames;
+    }
+    return *this;
 }
-bool Player::operator == (const Player& other) const {
 
+// Operator de comparatie
+bool Player::operator==(const Player& other) const
+{
+    return (maxPlayers == other.maxPlayers && firstPlayer == other.firstPlayer &&
+        secondPlayer == other.secondPlayer && inseredNames == other.inseredNames);
 }
-std::ostream& operator << (std::ostream os, const Player& player) {
 
+// Operator de afisare
+std::ostream& operator<<(std::ostream& os, const Player& player) {
+    os << "First Player: " << player.firstPlayer << ", "
+        << "Second Player: " << player.secondPlayer << ", "
+        << "Max Players: " << player.maxPlayers << ", "
+        << "Inserted Names: " << (player.inseredNames ? "Yes" : "No");
+    return os;
 }
-std::istream& operator >> (std::istream is, Player& player) {
 
+// Operator de citire
+std::istream& operator>>(std::istream& is, Player& player) {
+    std::clog << "Inserati primul nume: ";
+    is >> player.firstPlayer;
+
+    do {
+        std::clog << "Inserati al doilea nume: ";
+        is >> player.secondPlayer;
+        if (player.secondPlayer == player.firstPlayer) {
+            std::cerr << "Introduceti un nume diferit fata de primul \n";
+        }
+    } while (player.secondPlayer == player.firstPlayer);
+
+    return is;
 }
+
 
 void Player::playerName() { // Introducerea numelui
 
-    int selector = 0;
-    bool next = false;
-    do 
-    {
-        if (!inseredNames) //introducem numele jucatorilor in cazul in care nu am facuto deja
-        {
-            std::cout << "Introduceti numele first_Player: \n";
-            std::cin >> Player::firstPlayer;
-
-            std::cout << "Introduceti numele second_Player: \n";
-            do 
-            {
-                std::cin >> Player::secondPlayer;
-                if (secondPlayer != firstPlayer) //verificam sa nu fie aceliasi nume introduse la fel
-                {
-                    next = true;
-                }
-                else
-                {
-                    std::cout << "Introduceti va rog un nume diferit fata de primul: \n";
-                }
-
-            } while (!next);
-
-            std::cout << "Au fost introdusi jucatorii: " << Player::firstPlayer << " - " << Player::secondPlayer << std::endl;
-            inseredNames = true; 
-            return;
-        }
-        else //in cazul in care dorim dupa finisarea unuei partide alegem sa jucam din nou, putem sa jucam cu numele care au fost deja introdus sau sa introducem unele noi
-        { 
-            std::cout << "Numele introduse au fost " << firstPlayer << " Si " << secondPlayer << "\nDoriti sa schimbati numele jucatorilor? \n 1 - Yes \n 2 - NO" << std::endl;
-
-            std::cin >> selector;
-            if (selector == 1)
-            {
-                inseredNames = false;
-            }
-            else
-            {
-                return;
-            }
-        }
-
-    } while (true);
+    std::cin >> *this;
 }
