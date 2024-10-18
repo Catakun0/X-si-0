@@ -2,11 +2,15 @@
 #include "iostream"
 
 
-Board::Board() 
+Board::Board()
 {
-	
+	for (int i = 0; i < 9; i++)
+	{
+		squere[i] = std::to_string(i + 1);
+	}
+	return;
 }
-Board::Board(const Board& other) 
+Board::Board(const Board& other)
 {
 
 }
@@ -14,10 +18,10 @@ Board::Board(const int initialHightBoard) {
 
 }
 Board& Board::operator = (const Board& other) {
-	
-}
-bool Board::operator == (const Board& other) const {
 
+}
+bool Board::operator == (int position) const {
+	return (squere[position] != "0" && squere[position] != "X");
 }
 std::ostream& operator << (std::ostream os, const Board& board) {
 
@@ -26,7 +30,7 @@ std::istream& operator >> (std::istream is, Board& board) {
 
 }
 
-void Board::initializareaTablei() 
+void Board::initializareaTablei()
 {
 	for (int i = 0; i < 9; i++)
 	{
@@ -37,32 +41,25 @@ void Board::initializareaTablei()
 
 bool Board::check_If_is_empty(int position) { //verificam daca positioa data este goala, deci nu trb sa se afle acolo "X" SAU "0"
 
-	if (squere[position] != "0" && squere[position] != "X")
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return *this == position;
 }
 int Board::checkWin() { //verificam daca este un castigator sau daca e remiza
 
 	std::string selector = "X";
 	for (int j = 1; j < 3; j++) // facem 2 verificari la rand pentru X si pentru 0
 	{
-		if (j == 1) 
+		if (j == 1)
 		{
 			selector = "X";
 		}
-		else 
+		else
 		{
 			selector = "0";
 		}
 
 		for (int i = 0; i < 3; i++) //verificam orizontal
 		{
-			if (squere[i * 3] == selector && squere[i * 3 + 1] == selector && squere[i * 3 + 2] == selector) 
+			if (squere[i * 3] == selector && squere[i * 3 + 1] == selector && squere[i * 3 + 2] == selector)
 			{
 				if (selector == "X")
 				{
