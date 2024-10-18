@@ -34,13 +34,13 @@ void GameEngine::StartGame() {
 	Player player;
 	RandomPlay randomPlay;
 	Board boardOriginal;
-	Painter painter(&boardOriginal);
+	Painter painter(&boardOriginal); //aici folosim operatorul cu parametri care primeste un obect de tip Board
 
 	do 
 	{
-		boardOriginal.initializareaTablei();
-		randomPlay.randomGenerate(); //incepe la intaplare primul sau al doilea player
+		boardOriginal.initializareaTablei(); //recreem tabla
 		player.playerName(); //introducem numele 
+		randomPlay.randomGenerate(); //incepe la intaplare primul sau al doilea player
 		painter.Draw(1); //afiseaza jocul
 		painter.Draw(2); //meniul de final
 
