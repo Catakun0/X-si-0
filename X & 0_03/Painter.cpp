@@ -46,7 +46,7 @@ std::istream& operator>>(std::istream& in, Painter& painter)
 		}
 		else 
 		{
-			std::cerr << "Va rog sa introduceti o caseta de la 1 - 9";
+			std::cerr << "Va rog sa introduceti o caseta de la 1 - 9" << std::endl;
 			next = false;
 		}
 	} while (!next);
@@ -74,7 +74,7 @@ void Painter::Draw(int i) {
 				std::system("cls"); // curatam ecranul
 				std::cout << "\n Sa inceapa jocul \n\n";
 				std::cout << *this; //operatorul de afisare
-				std::cout << "\n Numele jucătorilor: " << Player::firstPlayer << " si " << Player::secondPlayer << "\n" << std::endl;
+				std::cout << "\n Numele jucatorilor: " << Player::firstPlayer << " si " << Player::secondPlayer << "\n" << std::endl;
 				enterNow = false;
 			}
 
