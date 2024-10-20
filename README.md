@@ -1,8 +1,8 @@
 # Jocul X si 0   
 
-## Constructori si Operatorii
+## Constructorii si Operatorii
 # Constructorii 
-Aveam mai multe tipuri de constructoria acestea fiind   
+Aveam mai multe tipuri de constructori acestea fiind   
 1. Constructorul implicit
 2. Constructorul de copiere
 3. Constructorul cu parametri   
