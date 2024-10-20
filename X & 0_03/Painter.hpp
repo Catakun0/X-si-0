@@ -1,8 +1,10 @@
 #pragma once
 #include <iostream>
 #include "Board.hpp"
+#include "Painter_abstract.hpp"
 
-class Painter{ 
+class Painter : public Painter_abstract
+{ 
     public: 
     int select1;
 
