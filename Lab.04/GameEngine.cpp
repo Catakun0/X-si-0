@@ -20,13 +20,13 @@ GameEngine& GameEngine::operator = (const GameEngine& other) {
 
 }
 bool GameEngine::operator == (const GameEngine& other) const {
-
+	return true;
 }
-std::ostream& operator << (std::ostream os, const GameEngine& gameEngine) {
-
+std::ostream& operator << (std::ostream& os, const GameEngine& gameEngine) {
+	return os;
 }
-std::istream& operator >> (std::istream is, GameEngine& gameEngine) {
-
+std::istream& operator >> (std::istream& is, GameEngine& gameEngine) {
+	return is;
 }
 
 void GameEngine::StartGame() {
