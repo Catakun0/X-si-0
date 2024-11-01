@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Board.hpp"
 #include "Painter_abstract.hpp"
+#include <memory>
 
 class Painter : public Painter_abstract
 { 
@@ -10,7 +11,7 @@ class Painter : public Painter_abstract
 
     Painter(); //constructor implicit
     Painter(const Painter& other); //consttructor de copiere
-    Painter(Board* b) : board(b) {} //primeste ca parametru un board cu care se va juca
+    Painter(std::shared_ptr<Board> b) : board(b){} // primeste ca parametru un shared_ptr la board
 
     Painter& operator = (const Painter& other);//operator de copiere
     bool operator == (const Painter& other) const;
@@ -20,5 +21,5 @@ class Painter : public Painter_abstract
     friend std::istream& operator>>(std::istream& in, Painter& painter); //operator de citire
     friend std::ostream& operator<<(std::ostream& out, const Painter& painter); //operator de afisare
     private:
-    Board* board;
+    std::shared_ptr<Board> board;
 }; 
