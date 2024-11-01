@@ -6,9 +6,8 @@ Board::Board()
 {
 	for (int i = 0; i < 9; i++)
 	{
-		squere[i] = std::to_string(i + 1);
+		squere[i] = std::to_string(i + 1); 
 	}
-	return;
 }
 Board::Board(const Board& other)
 {
