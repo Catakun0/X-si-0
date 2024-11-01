@@ -4,7 +4,7 @@
 
 class Board{ 
     public:
-
+    
     std::vector<std::string> squere;
 
     Board(); //Constructor mplicit
@@ -20,7 +20,3 @@ class Board{
     bool check_If_is_empty(int position); //verifica daca este gol patratul pentru inserare
     int checkWin();  //verifica daca exista un castigator
 };
-Board::Board() : squere(8) { // Inițializăm vectorul cu 9 elemente
-    initializareaTablei(); // Apelăm metoda pentru a inițializa tabla
-}
-
