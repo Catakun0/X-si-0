@@ -94,7 +94,7 @@ void Painter::Draw(int i) {
 			{
 				std::cin >> *this; // operatorul de citire
 
-				checkSquer = board->check_If_is_empty(this->select1);
+				checkSquer = (*board).check_If_is_empty(this->select1);
 				if (!checkSquer) 
 				{
 					std::cout << "Alege o casuta liber \n";
@@ -109,26 +109,26 @@ void Painter::Draw(int i) {
 					int index = j * 3 + i;
 					if (index != select1)
 					{
-						std::cout << "[" << board->squere[index] << "] "; //afisam casuta din board
+						std::cout << "[" << (*board).squere[index] << "] "; //afisam casuta din board
 					} 
 					else
 					{
 						if (RandomPlay::playerStart == 1) //Verificam care jucator merge X sau 0
 						{
-							board->squere[index] = "X";
-							std::cout << "[" << board->squere[index] << "] ";
+							(*board).squere[index] = "X";
+							std::cout << "[" << (*board).squere[index] << "] ";
 							RandomPlay::playerStart = 2; //schimbam sa mearga urmatorul jucator
 						}
 						else
 						{
-							board->squere[index] = "0";
-							std::cout << "[" << board->squere[index] << "] ";
+							(*board).squere[index] = "0";
+							std::cout << "[" << (*board).squere[index] << "] ";
 							RandomPlay::playerStart = 1; //schimbam sa mearga urmatorul jucator
 						}
 					}
 				}
 				std::cout << std::endl; 
-				checkWin = board->checkWin(); //verificam daca exista un castigator 
+				checkWin = (*board).checkWin(); //verificam daca exista un castigator 
 				if (checkWin == 1)
 				{
 					std::cout << "Castigatorul este: " << Player::firstPlayer << std::endl;
