@@ -5,8 +5,9 @@
 #include <iostream> 
 #include <cstdlib>
 
-Board::Board() : squere(8) { // Inițializăm vectorul cu 9 elemente
-	initializareaTablei(); // Apelăm metoda pentru a inițializa tabla
+Painter::Painter()
+{
+
 }
 
 // Constructor de copiere
