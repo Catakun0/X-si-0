@@ -28,11 +28,11 @@ bool Board::operator==(int position) const
 	}
 	return (squere[position] != "0" && squere[position] != "X");
 }
-std::ostream& operator << (std::ostream os, const Board& board) {
-
+std::ostream& operator << (std::ostream& os, const Board& board) {
+	return os;
 }
-std::istream& operator >> (std::istream is, Board& board) {
-
+std::istream& operator >> (std::istream& is, Board& board) {
+	return is;
 }
 
 void Board::initializareaTablei()
