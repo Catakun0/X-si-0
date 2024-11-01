@@ -33,12 +33,12 @@ void GameEngine::StartGame() {
 	//instantele
 	Player player;
 	RandomPlay randomPlay;
-	Board boardOriginal;
-	Painter painter(&boardOriginal); //aici folosim operatorul cu parametri care primeste un obect de tip Board
+	std::shared_ptr<Board> boardOriginal = std::make_shared<Board>();
+	Painter painter(boardOriginal); //aici folosim operatorul cu parametri care primeste un obect de tip Board
 
 	do 
 	{
-		boardOriginal.initializareaTablei(); //recreem tabla
+		boardOriginal->initializareaTablei(); //recreem tabla
 		player.playerName(); //introducem numele 
 		randomPlay.randomGenerate(); //incepe la intaplare primul sau al doilea player
 		painter.Draw(1); //afiseaza jocul
