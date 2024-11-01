@@ -1,13 +1,10 @@
 ﻿#include "Board.hpp"
 #include "iostream"
+#include <algorithm> 
 
 
-Board::Board()
-{
-	for (int i = 0; i < 9; i++)
-	{
-		squere[i] = std::to_string(i + 1); 
-	}
+Board::Board() : squere(9) {
+	initializareaTablei();
 }
 Board::Board(const Board& other)
 {
@@ -34,13 +31,8 @@ std::istream& operator >> (std::istream& is, Board& board) {
 	return is;
 }
 
-void Board::initializareaTablei()
-{
-	for (int i = 0; i < 9; i++)
-	{
-		squere[i] = std::to_string(i + 1);
-	}
-	return;
+void Board::initializareaTablei() {
+	std::generate(squere.begin(), squere.end(), [n = 1]() mutable { return std::to_string(n++); });
 }
 
 bool Board::check_If_is_empty(int position) { //verificam daca positioa data este goala, deci nu trb sa se afle acolo "X" SAU "0"
