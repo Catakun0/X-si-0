@@ -94,7 +94,7 @@ void Painter::Draw(int i) {
 			{
 				std::cin >> *this; // operatorul de citire
 
-				checkSquer = (*board).check_If_is_empty(this->select1);
+				checkSquer = painter.board->check_If_is_empty(this->select1);
 				if (!checkSquer) 
 				{
 					std::cout << "Alege o casuta liber \n";
