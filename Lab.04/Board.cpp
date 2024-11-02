@@ -32,7 +32,7 @@ std::istream& operator >> (std::istream& is, Board& board) {
 }
 
 void Board::initializareaTablei() {
-	std::generate(squere.begin(), squere.end(), [n = 1]() mutable { return std::to_string(n++); });
+	std::generate(squere.begin(), squere.end(), [n = 1]() mutable { return std::to_string(n++); }); // folosim algoritmul generate oentru inserarea de ca un capat pana la altul
 }
 
 bool Board::check_If_is_empty(int position) { //verificam daca positioa data este goala, deci nu trb sa se afle acolo "X" SAU "0"
