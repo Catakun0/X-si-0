@@ -11,7 +11,7 @@ class Painter : public Painter_abstract
 
     Painter(); //constructor implicit
     Painter(const Painter& other); //consttructor de copiere
-    Painter(std::shared_ptr<Board> b) : board(b){} // primeste ca parametru un shared_ptr la board
+    Painter(std::shared_ptr<Board> b) : board(b){} // primeste ca parametru un pointer de tip shared_ptr la board
 
     Painter& operator = (const Painter& other);//operator de copiere
     bool operator == (const Painter& other) const;
