@@ -13,8 +13,9 @@ Board::Board(const Board& other)
 Board::Board(const int initialHightBoard) {
 
 }
-Board& Board::operator = (const Board& other) {
-
+Board& Board::operator = (const Board& other)
+{
+	return *this;
 }
 bool Board::operator==(int position) const 
 {
