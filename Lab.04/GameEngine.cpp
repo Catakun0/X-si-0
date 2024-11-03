@@ -16,8 +16,9 @@ GameEngine::GameEngine(const GameEngine& other)
 GameEngine::GameEngine(const bool startGame) {
 
 }
-GameEngine& GameEngine::operator = (const GameEngine& other) {
-
+GameEngine& GameEngine::operator = (const GameEngine& other) 
+{
+	return *this;
 }
 bool GameEngine::operator == (const GameEngine& other) const {
 	return true;
