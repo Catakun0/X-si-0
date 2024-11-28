@@ -1,7 +1,7 @@
 # Jocul X si 0
-## Bliblioteca externa
+## Bliblioteca externa JSON
 * Bliblioteca pe care am folosit-o, este una pentru salvarea datelor 
-JSON
+json.hpp
 Bliblioteca dupa descarcare am introduso in fisierile principale, hpp, cpp;
 Si iam dat referinta fisierului "json.hpp" in locatia pe care o detin
 ## Pentru fiecare clasa am creat o bibliotecă de programare, statică.
