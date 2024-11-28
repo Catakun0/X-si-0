@@ -1,31 +1,11 @@
 # Jocul X si 0
-## Blibliotecxa externa
-*Bliblioteca pe care am folosit-o, este una pentru salvarea datelor 
-## Fisierele de constructie
-# Bat
-Sunt modalitati prin care putem sa usuram modul de compilare a obectelor, mai mult ca printr-o metoda semi-automatizata
-la ce se refera aceasta
-* Crearea unui fisier de constructie, spre exemplu un fiser de tip bat sau un fisier "Makefile"   
-Totusi din cauza problemei de compilarea pe dizpozitivul local compilarea o efectuez cu ajutorul executabilului de timp bat   
-* In fisierul respectiv (bat) introducem aceleasi linii de comanda ca cum am faci-o manual:   
-@echo off   
-g++ Board.cpp -o Board.o -c   
-g++ GameEngine.cpp -o GameEngine.o -c   
-g++ Painter.cpp -o Painter.o -c   
-g++ Player.cpp -o Player.o -c   
-g++ RandomPlay.cpp -o RandomPlay.o -c   
-g++ main.cpp -o main.o -c   
-g++ Board.o GameEngine.o Painter.o Player.o RandomPlay.o main.o -o tic_tac_toe.exe   
-* Astfel prin rularea acestui fisier prin terminal folosind comanda "make" va creea obecte pentru fiecare fisier in parte care a fost introduse in acesta
-* Iar "g++ Board.o GameEngine.o Painter.o Player.o RandomPlay.o main.o -o tic_tac_toe.exe" linia aceasta de comanda va crea un executabil pentru jocul nostru pe care il putem rula si juca
-# Makefile
-* in cazul in care folosim compilarea cu ajutorul unui fisier Makefile e doar un pic mai diferit 
-nu inseram direct comanda g++ Player.cpp -o Player.o -c Dar:   
-Player.o:   
-  g++ Player.cpp -o Player.o -c   
-Specificam ce obect dorim sa copilam si scriem comanda respectiva   
-Si asa din nou e nevoie pentru fiecare obiect   
-Iar pentru crearea executabilului e nevoie ca toate obectele sa fie construite intrun singur fisier exe:   
-x_and_0: Board.o GameEngine.o Painter.o Player.o RandomPlay.o main.o   
-  g++ Board.o GameEngine.o Painter.o Player.o RandomPlay.o main.o -o x_and_0
+## Bliblioteca externa
+* Bliblioteca pe care am folosit-o, este una pentru salvarea datelor 
+JSON
+Bliblioteca dupa descarcare am introduso in fisierile principale, hpp, cpp;
+Si iam dat referinta fisierului "json.hpp" in locatia pe care o detin
+## Pentru fiecare clasa am creat o bibliotecă de programare, statică.
+* Am creat fisierile de tip obecte .o la care la fel leam trimis referinta fisierului/ locatia fisierului json.hpp    
+Dupa ce sunt create fisierele de tip obecte acestea sunt folosite creend pentru fiecare in parte bliblioteci .a
+* Dupa crearea blibliotecelor, acestea sunt folosite pentru crearea executabelului si obligatoriu in ordinea in care sunt folosite in program
 
