@@ -16,5 +16,6 @@ ar rcs librandomplay.a RandomPlay.o
 g++ main.o -L. -lgameengine -lboard -lplayer -lrandomplay -lpainter -o tic_tac_toe.exe
 
 del *.o
+del *.a
 
 tic_tac_toe.exe
