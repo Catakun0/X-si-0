@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 
+/// @brief Clasa data este folosita pentru a returna un numar la intamplare intre 1 si 2, pentru a incepe un jucator la intamplare, Randomizarea fiind bazata pe timp
 class RandomPlay{
     public: 
 

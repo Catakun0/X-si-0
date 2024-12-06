@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 
+/// @brief Clasa data este folosita pentru inserarea celor 2 nume a jucatorilor care vor fi in partida curenta
 class Player{ 
 public:
     static int maxPlayers; //Jucatori maxim intro partida

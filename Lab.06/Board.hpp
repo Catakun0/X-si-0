@@ -2,7 +2,7 @@
 #include <iostream> 
 #include <vector>
  
-/// @brief Clasa data reprezinta toata tabla si datele acesteia, detine un array de la 0-9 pentru de tip string, iar cuparea unui coordonate va fi inlocuita cu X sau 0
+/// @brief Clasa data reprezinta toata tabla si datele acesteia, detine un array de la 0-9 de tip string, iar ocuparea unei coordonate va fi inlocuita cu X sau 0
 class Board{ 
     public:
     

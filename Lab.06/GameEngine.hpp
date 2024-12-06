@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 
+/// @brief Clasa data este folosita pentru a da un start jocului creend mai exact instantele claselor necesare pentru a putea jocul sa ruleze si sa afiseze corespunzator toata informatia incarcata
 class GameEngine{
     public:
     GameEngine(); 

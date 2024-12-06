@@ -4,6 +4,7 @@
 #include "Painter_abstract.hpp"
 #include <memory>
 
+/// @brief Clasa data este folosita pentru afisarea tuturor datelor importante, mai exact a tablei, jucatorul curent ce merge, numele jucatorilor, meniul de final, informatiile de final..etc
 class Painter : public Painter_abstract
 { 
     public: 
