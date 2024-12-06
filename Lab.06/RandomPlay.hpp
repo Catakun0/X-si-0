@@ -14,7 +14,9 @@ class RandomPlay{
     friend std::istream& operator >> (std::istream& is, RandomPlay& randomPlay); // operator de citire
 
     static int playerStart; //Va face prima decizia un jucator la intamplarea, "player1" sau "player2" va incepe in dependenta daca variabila pica 1 sau 2
-    void randomGenerate(); //metoda care o sa genereze un numar la intamplare
+
+    /// @brief functia data este folosita pentru un start randomizat, incepand la intamplare primul player sau al doilea player
+    void randomGenerate();
 };
 
 

@@ -3,14 +3,15 @@
 
 class GameEngine{
     public:
-    GameEngine(); //implicit
-    GameEngine(const GameEngine& other); // de copiere
-    GameEngine(const bool startGame); // cu parametru
+    GameEngine(); 
+    GameEngine(const GameEngine& other);
+    GameEngine(const bool startGame); 
 
-    GameEngine& operator = (const GameEngine& other);//operator de copiere
+    GameEngine& operator = (const GameEngine& other);
     bool operator == (const GameEngine& other) const;
     friend std::ostream& operator << (std::ostream& os, const GameEngine& gameEngine);
     friend std::istream& operator >> (std::istream& is, GameEngine& gameEngine);
 
-    void StartGame(); //Porneste jocul
+    /// @brief Functia data este folosita pentru a da un start jocului, instantiind doate instantele necesare, si inclusiv apelarea lor in ordinea coresponzatoare pentru a incepe jocul
+    void StartGame(); 
 }; 

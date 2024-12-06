@@ -4,7 +4,10 @@
 class Player{ 
 public:
     static int maxPlayers; //Jucatori maxim intro partida
-    void playerName(); //introducere numelor 
+
+    /// @brief Functia data este folosita pentru a insera denumirele player-ilor (firsPlayer si secondPlayer)
+    void playerName();
+
     static std::string firstPlayer, secondPlayer; //variabelele pentru numele jucatorilor
     static bool inseredNames; //un bool care va fi true in cazul in care am introdus o data numele jucatorilor
 
