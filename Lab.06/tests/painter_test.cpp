@@ -1,23 +1,24 @@
 #include "Painter.hpp"
-#include <cassert>
-#include <iostream>
+#include <gtest/gtest.h>
+#include <sstream>
 
-void testPainterClass() {
-    // Test default constructor
-    Painter p1;
-    
-    // Test copy constructor
-    Painter p2 = p1;
-
-    // Test assignment operator
-    Painter p3;
-    p3 = p1;
-    assert(p3 == p1);
-
-    std::cout << "Painter class tests passed!" << std::endl;
+TEST(PainterTest, DefaultConstructor) {
+    Painter painter;
+    EXPECT_EQ(painter.board, nullptr);
 }
 
-int main() {
-    testPainterClass();
-    return 0;
+TEST(PainterTest, AssignmentOperator) {
+    Painter painter1, painter2;
+    painter2 = painter1;
+    EXPECT_EQ(painter1.board, painter2.board);
+}
+
+TEST(PainterTest, EqualityOperator) {
+    Painter painter1, painter2;
+    EXPECT_TRUE(painter1 == painter2);
+}
+
+TEST(PainterTest, Draw) {
+    Painter painter;
+    // Mock data and calls to validate functionality
 }

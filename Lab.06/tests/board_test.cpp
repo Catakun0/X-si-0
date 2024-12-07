@@ -1,28 +1,27 @@
 #include "Board.hpp"
-#include <cassert>
-#include <iostream>
+#include <gtest/gtest.h>
 
-void testBoardClass() {
-    // Test default constructor
-    Board b1;
-    assert(b1.squere.size() == 9);
-
-    // Test copy constructor
-    Board b2 = b1;
-    assert(b2.squere == b1.squere);
-
-    // Test check_If_is_empty method
-    bool isEmpty = b1.check_If_is_empty(0);
-    assert(isEmpty == true);  // Should return true for an empty board position
-
-    // Test checkWin method
-    int winStatus = b1.checkWin();
-    assert(winStatus == 0);  // No winner in the initial empty board
-
-    std::cout << "Board class tests passed!" << std::endl;
+TEST(BoardTest, DefaultConstructor) {
+    Board board;
+    EXPECT_EQ(board.squere.size(), 9);
+    EXPECT_EQ(board.squere[0], "1");
+    EXPECT_EQ(board.squere[8], "9");
 }
 
-int main() {
-    testBoardClass();
-    return 0;
+TEST(BoardTest, CheckIfIsEmpty) {
+    Board board;
+    EXPECT_TRUE(board.check_If_is_empty(0));
+    EXPECT_FALSE(board.check_If_is_empty(9)); // Out of range
+}
+
+TEST(BoardTest, CheckWinCondition) {
+    Board board;
+    board.squere = { "X", "X", "X", "4", "5", "6", "7", "8", "9" }; // Horizontal win
+    EXPECT_EQ(board.checkWin(), 1);
+}
+
+TEST(BoardTest, CopyConstructor) {
+    Board board;
+    Board copy(board);
+    EXPECT_EQ(copy.squere, board.squere);
 }

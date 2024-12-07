@@ -3,7 +3,6 @@
 #include "string"
 #include <algorithm> 
 
-
 Board::Board() : squere(9) {
 	initializareaTablei();
 }

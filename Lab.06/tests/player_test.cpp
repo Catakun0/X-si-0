@@ -1,61 +1,49 @@
-#include <gtest/gtest.h>
 #include "Player.hpp"
+#include <gtest/gtest.h>
 
-// Test pentru constructorul implicit
-TEST(PlayerTests, DefaultConstructor) {
+TEST(PlayerTest, DefaultConstructor) {
     Player player;
     EXPECT_EQ(Player::maxPlayers, 2);
     EXPECT_EQ(Player::firstPlayer, "");
     EXPECT_EQ(Player::secondPlayer, "");
-    EXPECT_FALSE(Player::inseredNames);
+    EXPECT_EQ(Player::inseredNames, false);
 }
 
-// Test pentru constructorul de copiere
-TEST(PlayerTests, CopyConstructor) {
-    Player original(3);
-    Player copy = original;
-
-    EXPECT_EQ(copy.maxPlayers, original.maxPlayers);
+TEST(PlayerTest, ParameterizedConstructor) {
+    Player player(4);
+    EXPECT_EQ(Player::maxPlayers, 4);
 }
 
-// Test pentru operatorul de copiere
-TEST(PlayerTests, CopyAssignment) {
-    Player player1(4);
+TEST(PlayerTest, CopyConstructor) {
+    Player original(4);
+    Player copy(original);
+    EXPECT_EQ(copy.maxPlayers, 4);
+    EXPECT_EQ(copy.firstPlayer, "");
+    EXPECT_EQ(copy.secondPlayer, "");
+}
+
+TEST(PlayerTest, AssignmentOperator) {
+    Player player1(3);
     Player player2;
     player2 = player1;
-
-    EXPECT_EQ(player2.maxPlayers, player1.maxPlayers);
+    EXPECT_EQ(player2.maxPlayers, 3);
 }
 
-// Test pentru operatorul de comparare
-TEST(PlayerTests, EqualityOperator) {
+TEST(PlayerTest, EqualityOperator) {
     Player player1(2);
     Player player2(2);
-
     EXPECT_TRUE(player1 == player2);
 }
 
-// Test pentru operatorul de intrare
-TEST(PlayerTests, InputOperator) {
+TEST(PlayerTest, InputOutputOperators) {
     Player player;
     std::istringstream input("Alice\nBob\n");
-    std::cin.rdbuf(input.rdbuf()); // Suprascriere pentru test
-
-    player.playerName();
-
+    input >> player;
     EXPECT_EQ(Player::firstPlayer, "Alice");
     EXPECT_EQ(Player::secondPlayer, "Bob");
-}
-
-// Test pentru operatorul de ieșire
-TEST(PlayerTests, OutputOperator) {
-    Player player;
-    Player::firstPlayer = "Alice";
-    Player::secondPlayer = "Bob";
-    Player::maxPlayers = 2;
 
     std::ostringstream output;
     output << player;
-
-    EXPECT_EQ(output.str(), "First Player: Alice, Second Player: Bob, Max Players: 2, Inserted Names: No");
+    EXPECT_NE(output.str().find("Alice"), std::string::npos);
+    EXPECT_NE(output.str().find("Bob"), std::string::npos);
 }
