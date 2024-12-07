@@ -1,5 +1,8 @@
 # Jocul X si 0
-* Clasicul joc X si 0 creat in consola cu ajutorul limbajului de programare C++    
+* Clasicul joc X si 0 creat in consola cu ajutorul limbajului de programare C++   
+# Regulile de joc
+Cine reuseste sa construiasca un sir de 3 charactere "X" sau "0" la rand pe diagonala, veritcala sau orizontala acela este castigatorul     
+In cazul in care toate pozitiile sunt ocupate va rezulta a fiind egalitate     
 Construirea jocului a fost realizata cu ajutorul claselor main, Board, Player, GameEngine, randomPlay si Painter
 * Fiecare clasa are functualitatea sa pentru ca jocul sa ruleze
 ## Startul jocului
