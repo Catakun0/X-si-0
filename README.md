@@ -13,7 +13,7 @@ Construirea jocului a fost realizata cu ajutorul claselor main, Board, Player, G
 5. Board - o data cu crearea istantei date constructorul implicit este apelat in momentul respectiv, iar acesta apeleaza functia de inserare a Boardului, ce insereaza un vector cu 1.2.3...9 de tip string 
 6. Painter - reprezinta clasa principala care este folosita pentru afisarea datele importante
 * Painter afiseaza tabla jocului, inclusiv actualizarea sa se face dupa fiecare modificare a Boardului in cazul in care a fost introdus o coordonata disponibila si numarul coordonatei a fost inlocuit cu "X" sau "0"
-# Bliblioteca externa "JOSN"
+# Bliblioteca externa "JSON"
 * De asemenea clasa Painter are posibilitatea cu ajutorul blibliotecei externe json.hpp sa salveze date    
 in cazul jocului dat, datele ce sunt salvate sunt numarul de castiguri a fiecarui player    
 Clasa painter detine functie pentru actualizare a datelor si de afisare, care sunt apelate la meniul de final
