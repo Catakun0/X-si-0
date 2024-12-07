@@ -1,7 +1,7 @@
 #include "Player.hpp"
 #include <gtest/gtest.h>
 
-TEST(PlayerTest, DefaultConstructor) {
+TEST(PlayerTest, constructor) {
     Player player;
     EXPECT_EQ(Player::maxPlayers, 2);
     EXPECT_EQ(Player::firstPlayer, "");
@@ -9,12 +9,12 @@ TEST(PlayerTest, DefaultConstructor) {
     EXPECT_EQ(Player::inseredNames, false);
 }
 
-TEST(PlayerTest, ParameterizedConstructor) {
+TEST(PlayerTest, operatorul_cu_paramtri) {
     Player player(4);
     EXPECT_EQ(Player::maxPlayers, 4);
 }
 
-TEST(PlayerTest, CopyConstructor) {
+TEST(PlayerTest, constructorul_de_copiere) {
     Player original(4);
     Player copy(original);
     EXPECT_EQ(copy.maxPlayers, 4);
@@ -22,20 +22,20 @@ TEST(PlayerTest, CopyConstructor) {
     EXPECT_EQ(copy.secondPlayer, "");
 }
 
-TEST(PlayerTest, AssignmentOperator) {
+TEST(PlayerTest, operator_de_copiere) {
     Player player1(3);
     Player player2;
     player2 = player1;
     EXPECT_EQ(player2.maxPlayers, 3);
 }
 
-TEST(PlayerTest, EqualityOperator) {
+TEST(PlayerTest, operatorul_de_comparatie) {
     Player player1(2);
     Player player2(2);
     EXPECT_TRUE(player1 == player2);
 }
 
-TEST(PlayerTest, InputOutputOperators) {
+TEST(PlayerTest, operator_De_citireAfisare) {
     Player player;
     std::istringstream input("Alice\nBob\n");
     input >> player;

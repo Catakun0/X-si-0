@@ -15,12 +15,17 @@ ar rcs librandomplay.a RandomPlay.o
 
 g++ main.o -L. -lgameengine -lboard -lplayer -lrandomplay -lpainter -o tic_tac_toe.exe
 
-g++ -I json-develop/include -c tests/test_board.cpp -o test_board.o
-g++ -I json-develop/include -c tests/test_gameengine.cpp -o test_gameengine.o
+g++ -I json-develop/include -I tests/ -c tests/player_test.cpp -o player_test.o
+g++ -I json-develop/include -I tests/ -c tests/randomPlay_test.cpp -o randomPlay_test.o
+g++ -I json-develop/include -I tests/ -c tests/board_test.cpp -o board_test.o
+g++ -I json-develop/include -I tests/ -c tests/painter_test.cpp -o painter_test.o
 
-g++ test_board.o test_gameengine.o -L. -lgameengine -lboard -lplayer -lrandomplay -lpainter -o test_suite.exe
+g++ player_test.o -L. -lboard -lplayer -o player_test.exe
+g++ randomPlay_test.o -L. -lboard -lrandomplay -o randomPlay_test.exe
+g++ board_test.o -L. -lboard -o board_test.exe
+g++ painter_test.o -L. -lpainter -o painter_test.exe
 
 del *.o
 del *.a
 
-test_suite.exe
+tic_tac_toe.exe
