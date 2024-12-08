@@ -1,5 +1,4 @@
 *.o
 *.exe
-*.json-develop
 *.a
 json-develop/
